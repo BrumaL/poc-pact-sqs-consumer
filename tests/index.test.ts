@@ -1,28 +1,3 @@
-// import { person } from "../src/index";
-// import Validator from "jsonschema";
-
-// import Person from "../src/models/Person";
-// import personSchema from "../src/schema/personSchema.json";
-
-// describe("app", () => {
-//   it("validates personSchema contract", async () => {
-//     const mockedPerson: Person = {
-//       age: 30,
-//       fullName: "Martin Eklund",
-//       gender: "male",
-//     };
-
-//     const spy = jest.spyOn(person, "create");
-//     person.create(mockedPerson);
-
-//     const validationResult = Validator.validate(mockedPerson, personSchema)
-//       .valid;
-
-//     expect(validationResult).toBeTruthy();
-//     expect(spy).toHaveBeenCalledWith(mockedPerson);
-//   });
-// });
-
 import {
   MessageConsumerPact,
   synchronousBodyHandler,

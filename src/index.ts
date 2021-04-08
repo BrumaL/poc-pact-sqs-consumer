@@ -1,5 +1,4 @@
 import { Consumer } from "sqs-consumer";
-
 import AWS from "aws-sdk";
 
 const credentials = new AWS.SharedIniFileCredentials({ profile: "default" });

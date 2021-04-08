@@ -9,60 +9,6 @@
     {
       "description": "a message from the queue",
       "providerStates": [
-        {
-          "name": "some state",
-          "params": null
-        }
-      ],
-      "contents": {
-        "Country": {
-          "DataType": "string",
-          "StringValue": "sweden"
-        },
-        "Region": {
-          "DataType": "string",
-          "StringValue": "europe"
-        }
-      },
-      "matchingRules": {
-        "body": {
-          "$.Country.DataType": {
-            "matchers": [
-              {
-                "match": "type"
-              }
-            ]
-          },
-          "$.Country.StringValue": {
-            "matchers": [
-              {
-                "match": "type"
-              }
-            ]
-          },
-          "$.Region.DataType": {
-            "matchers": [
-              {
-                "match": "type"
-              }
-            ]
-          },
-          "$.Region.StringValue": {
-            "matchers": [
-              {
-                "match": "type"
-              }
-            ]
-          }
-        }
-      },
-      "metaData": {
-        "content-type": "application/json"
-      }
-    },
-    {
-      "description": "a message from the queue",
-      "providerStates": [
 
       ],
       "contents": {
