@@ -7,7 +7,7 @@
   },
   "messages": [
     {
-      "description": "a message from the queue",
+      "description": "create country event",
       "providerStates": [
 
       ],

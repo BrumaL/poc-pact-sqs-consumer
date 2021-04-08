@@ -20,7 +20,7 @@ describe("consumer of sqs queue", () => {
     await expect(
       // Consumer expectations
       messagePact
-        .expectsToReceive("a message from the queue")
+        .expectsToReceive("create country event")
         .withContent({
           Country: {
             DataType: like("string"),

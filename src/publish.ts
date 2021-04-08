@@ -12,6 +12,11 @@ const opts = {
   consumerVersion,
 };
 
-new Publisher(opts).publishPacts().then(() => {
-  console.log("successfully published to pact");
-});
+new Publisher(opts)
+  .publishPacts()
+  .then(() => {
+    console.log("successfully published to pact");
+  })
+  .catch((e) => {
+    console.log("Pact contract publishing failed: ", e);
+  });
