@@ -1,14 +1,14 @@
-import { Publisher } from "@pact-foundation/pact";
-import path from "path";
+const { Publisher } = require("@pact-foundation/pact");
+const path = require("path");
 const { versionFromGitTag } = require("@pact-foundation/absolute-version");
 
 const consumerVersion = versionFromGitTag();
 
-console.log("versionFromGitTag: ", consumerVersion);
-
 const opts = {
   pactFilesOrDirs: [path.resolve(process.cwd(), "pacts")],
-  pactBroker: "https://mareklund.pactflow.io",
+  pactBroker: "https://meklund.pactflow.io/",
+  pactBrokerToken: "oqC6W6RnlmMgp-NhQfapBw",
+  tags: ["master"],
   consumerVersion,
 };
 
