@@ -8,7 +8,8 @@
     "start:dev": "cross-env NODE_ENV=development webpack",
     "start": "webpack & node build/index.js",
     "test": "jest",
-    "publish:pact": "node ./src/publish.ts"
+    "publish:pact": "node ./src/publish.ts",
+    "pact:deploy": "pact-broker can-i-deploy --pacticipant MartinsMessageConsumer --latest --broker-base-url https://meklund.pactflow.io --broker-token oqC6W6RnlmMgp-NhQfapBw"
   },
   "dependencies": {
     "@pact-foundation/absolute-version": "^0.0.2",

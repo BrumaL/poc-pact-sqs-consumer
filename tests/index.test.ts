@@ -28,10 +28,6 @@ describe("consumer of sqs queue", () => {
               DataType: like("string"),
               StringValue: like("sweden"),
             },
-            Region: {
-              DataType: like("string"),
-              StringValue: like("europe"),
-            },
           },
         })
         .withMetadata({
@@ -42,22 +38,22 @@ describe("consumer of sqs queue", () => {
     ).resolves.not.toThrow();
   });
 
-  it("expects to throw an error", async () => {
-    await expect(
-      messagePact
-        .expectsToReceive("Missing fields")
-        .withContent({
-          MessageAttributes: {
-            Country: {
-              DataType: like("string"),
-              StringValue: like("sweden"),
-            },
-          },
-        })
-        .withMetadata({
-          "content-type": "application/json",
-        })
-        .verify(synchronousBodyHandler(processMessage))
-    ).rejects.toThrow("Missing fields");
-  });
+  // it("expects to throw an error", async () => {
+  //   await expect(
+  //     messagePact
+  //       .expectsToReceive("Missing fields")
+  //       .withContent({
+  //         MessageAttributes: {
+  //           Country: {
+  //             DataType: like("string"),
+  //             StringValue: like("sweden"),
+  //           },
+  //         },
+  //       })
+  //       .withMetadata({
+  //         "content-type": "application/json",
+  //       })
+  //       .verify(synchronousBodyHandler(processMessage))
+  //   ).rejects.toThrow("Missing fields");
+  // });
 });
