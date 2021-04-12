@@ -12,6 +12,8 @@ const opts = {
   consumerVersion,
 };
 
+// add comment to generate new git version
+
 new Publisher(opts)
   .publishPacts()
   .then(() => {
