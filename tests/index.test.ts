@@ -22,13 +22,16 @@ describe("consumer of sqs queue", () => {
       messagePact
         .expectsToReceive("create country event")
         .withContent({
-          Country: {
-            DataType: like("string"),
-            StringValue: like("sweden"),
-          },
-          Region: {
-            DataType: like("string"),
-            StringValue: like("europe"),
+          Message: like("string"),
+          MessageAttributes: {
+            Country: {
+              DataType: like("string"),
+              StringValue: like("sweden"),
+            },
+            Region: {
+              DataType: like("string"),
+              StringValue: like("europe"),
+            },
           },
         })
         .withMetadata({
@@ -44,9 +47,11 @@ describe("consumer of sqs queue", () => {
       messagePact
         .expectsToReceive("Missing fields")
         .withContent({
-          Country: {
-            DataType: like("string"),
-            StringValue: like("sweden"),
+          MessageAttributes: {
+            Country: {
+              DataType: like("string"),
+              StringValue: like("sweden"),
+            },
           },
         })
         .withMetadata({

@@ -15,7 +15,7 @@ const opts = {
 new Publisher(opts)
   .publishPacts()
   .then(() => {
-    console.log("successfully published to pact");
+    console.log("successfully published to pact broker");
   })
   .catch((e) => {
     console.log("Pact contract publishing failed: ", e);

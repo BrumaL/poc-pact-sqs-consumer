@@ -12,24 +12,30 @@
 
       ],
       "contents": {
-        "Country": {
-          "DataType": {
-            "contents": "string",
-            "json_class": "Pact::SomethingLike"
-          },
-          "StringValue": {
-            "contents": "sweden",
-            "json_class": "Pact::SomethingLike"
-          }
+        "Message": {
+          "contents": "string",
+          "json_class": "Pact::SomethingLike"
         },
-        "Region": {
-          "DataType": {
-            "contents": "string",
-            "json_class": "Pact::SomethingLike"
+        "MessageAttributes": {
+          "Country": {
+            "DataType": {
+              "contents": "string",
+              "json_class": "Pact::SomethingLike"
+            },
+            "StringValue": {
+              "contents": "sweden",
+              "json_class": "Pact::SomethingLike"
+            }
           },
-          "StringValue": {
-            "contents": "europe",
-            "json_class": "Pact::SomethingLike"
+          "Region": {
+            "DataType": {
+              "contents": "string",
+              "json_class": "Pact::SomethingLike"
+            },
+            "StringValue": {
+              "contents": "europe",
+              "json_class": "Pact::SomethingLike"
+            }
           }
         }
       },
