@@ -6,10 +6,7 @@ const credentials = new AWS.SharedIniFileCredentials({ profile: "default" });
 AWS.config.update({ credentials: credentials, region: "eu-north-1" });
 
 export const processMessage = async (message: AWS.SQS.Message) => {
-  if (
-    !message.MessageAttributes["Country"] ||
-    !message.MessageAttributes["Region"]
-  ) {
+  if (!message.MessageAttributes["Country"]) {
     throw new Error("Missing fields");
   }
 
@@ -26,13 +23,17 @@ const app = Consumer.create({
 
 app.on("error", (err) => {
   console.error(err.message);
+  throw new Error("something went wrong: " + err.message);
 });
 
 app.on("processing_error", (err) => {
   console.error(err.message);
+  throw new Error("something went wrong: " + err.message);
 });
 
-console.log("queue service is running");
-app.start();
+if (require.main === module) {
+  app.start();
+  console.log("queue service is running");
+}
 
 export default app;
