@@ -31,7 +31,9 @@ app.on("processing_error", (err) => {
   throw new Error("something went wrong: " + err.message);
 });
 
-console.log("queue service is running");
-app.start();
+if (require.main === module) {
+  app.start();
+  console.log("queue service is running");
+}
 
 export default app;
