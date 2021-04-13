@@ -23,10 +23,12 @@ const app = Consumer.create({
 
 app.on("error", (err) => {
   console.error(err.message);
+  throw new Error("something went wrong: " + err.message);
 });
 
 app.on("processing_error", (err) => {
   console.error(err.message);
+  throw new Error("something went wrong: " + err.message);
 });
 
 console.log("queue service is running");

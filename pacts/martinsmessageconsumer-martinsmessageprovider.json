@@ -26,16 +26,6 @@
               "contents": "sweden",
               "json_class": "Pact::SomethingLike"
             }
-          },
-          "Region": {
-            "DataType": {
-              "contents": "string",
-              "json_class": "Pact::SomethingLike"
-            },
-            "StringValue": {
-              "contents": "europe",
-              "json_class": "Pact::SomethingLike"
-            }
           }
         }
       },
