@@ -8,6 +8,8 @@ env:
   PACT_BROKER_BASE_URL: ${{secrets.PACT_BROKER_BASE_URL}}
   PACT_BROKER_TOKEN: ${{secrets.PACT_BROKER_TOKEN}}
   PACTICIPANT: MartinsMessageConsumer
+  PACTICIPANT_VERSION: ${{ github.event.pull_request.head.sha }}
+  DEPLOY_TARGET: ${{ github.base_ref }}
 
 jobs:
   test:
@@ -30,3 +32,16 @@ jobs:
           -k $PACT_BROKER_TOKEN 
           -a ${{ github.sha }} 
           -t $GITHUB_HEAD_REF
+      - name: Can i deploy?
+        run: >
+          yarn pact-broker can-i-deploy
+          -a $PACTICIPANT
+          -e $PACTICIPANT_VERSION
+          --to $DEPLOY_TARGET
+          --retry-while-unkown 3
+          --retry-interval 30
+          -b $PACT_BROKER_BASE_URL
+          -k $PACT_BROKER_TOKEN
+
+
+
