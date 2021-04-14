@@ -28,10 +28,10 @@ jobs:
       - name: Publish contract
         run: >
           yarn pact-broker publish pacts 
-          -b $PACT_BROKER_BASE_URL 
-          -k $PACT_BROKER_TOKEN 
-          -a $PACTICIPANT_VERSION 
-          -t $GITHUB_HEAD_REF
+          --broker-base-url $PACT_BROKER_BASE_URL 
+          --broker-token $PACT_BROKER_TOKEN 
+          --consumer-app-version $PACTICIPANT_VERSION 
+          --tag $GITHUB_HEAD_REF
       - name: Can i deploy?
         run: >
           yarn pact-broker can-i-deploy
