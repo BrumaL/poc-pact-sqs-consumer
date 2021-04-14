@@ -35,13 +35,11 @@ jobs:
       - name: Can i deploy?
         run: >
           yarn pact-broker can-i-deploy
-          -a $PACTICIPANT
-          -e $PACTICIPANT_VERSION
+          --pacticipant $PACTICIPANT
+          --version $PACTICIPANT_VERSION
           --to $DEPLOY_TARGET
-          --retry-while-unkown 3
-          --retry-interval 30
-          -b $PACT_BROKER_BASE_URL
-          -k $PACT_BROKER_TOKEN
+          --broker-token $PACT_BROKER_BASE_URL
+          --broker-token $PACT_BROKER_TOKEN
 
 
 
