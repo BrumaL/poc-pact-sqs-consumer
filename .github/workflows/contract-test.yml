@@ -23,14 +23,14 @@ jobs:
           node-version: 14
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Test
+      - name: Run tests
         run: yarn test
       - name: Publish contract
         run: >
           yarn pact-broker publish pacts 
           -b $PACT_BROKER_BASE_URL 
           -k $PACT_BROKER_TOKEN 
-          -a ${{ github.sha }} 
+          -a $PACTICIPANT_VERSION 
           -t $GITHUB_HEAD_REF
       - name: Can i deploy?
         run: >
