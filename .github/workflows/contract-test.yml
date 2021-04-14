@@ -37,7 +37,6 @@ jobs:
           yarn pact-broker can-i-deploy
           --pacticipant $PACTICIPANT
           --version $PACTICIPANT_VERSION
-          --to $DEPLOY_TARGET
           --broker-base-url $PACT_BROKER_BASE_URL
           --broker-token $PACT_BROKER_TOKEN
 
