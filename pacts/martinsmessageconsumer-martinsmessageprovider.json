@@ -8,9 +8,7 @@
   "messages": [
     {
       "description": "create country event",
-      "providerStates": [
-
-      ],
+      "providerStates": [],
       "contents": {
         "Message": {
           "contents": "string",
@@ -26,11 +24,20 @@
               "contents": "sweden",
               "json_class": "Pact::SomethingLike"
             }
+          },
+          "Region": {
+            "DataType": {
+              "contents": "string",
+              "json_class": "Pact::SomethingLike"
+            },
+            "StringValue": {
+              "contents": "europe",
+              "json_class": "Pact::SomethingLike"
+            }
           }
         }
       },
-      "matchingRules": {
-      },
+      "matchingRules": {},
       "metaData": {
         "content-type": "application/json"
       }
