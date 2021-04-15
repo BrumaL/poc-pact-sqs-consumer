@@ -8,9 +8,7 @@
   "messages": [
     {
       "description": "create country event",
-      "providerStates": [
-
-      ],
+      "providerStates": [],
       "contents": {
         "Message": {
           "contents": "string",
@@ -39,8 +37,7 @@
           }
         }
       },
-      "matchingRules": {
-      },
+      "matchingRules": {},
       "metaData": {
         "content-type": "application/json"
       }
