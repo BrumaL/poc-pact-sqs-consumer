@@ -28,10 +28,6 @@ describe("consumer of sqs queue", () => {
               DataType: like("string"),
               StringValue: like("sweden"),
             },
-            Region: {
-              DataType: like("string"),
-              StringValue: like("europe"),
-            },
           },
         })
         .withMetadata({
