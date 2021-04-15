@@ -1,4 +1,4 @@
-name: contract-test
+name: pact-test
 
 on:
   pull_request:
@@ -25,7 +25,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Run tests
         run: yarn test
-      - name: Publish contract
+      - name: Publish pact
         run: >
           yarn pact-broker publish pacts 
           --broker-base-url $PACT_BROKER_BASE_URL 
@@ -37,6 +37,7 @@ jobs:
           yarn pact-broker can-i-deploy
           --pacticipant $PACTICIPANT
           --version $PACTICIPANT_VERSION
+          --to $GITHUB_HEAD_REF
           --broker-base-url $PACT_BROKER_BASE_URL
           --broker-token $PACT_BROKER_TOKEN
 
