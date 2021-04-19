@@ -12,28 +12,89 @@
 
       ],
       "contents": {
+        "Message": "string",
+        "MessageAttributes": {
+          "Country": {
+            "DataType": "string",
+            "StringValue": "sweden"
+          },
+          "Region": {
+            "DataType": "string",
+            "StringValue": "europe"
+          }
+        }
+      },
+      "matchingRules": {
+        "body": {
+          "$.Message": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.MessageAttributes.Country.DataType": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.MessageAttributes.Country.StringValue": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.MessageAttributes.Region.DataType": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.MessageAttributes.Region.StringValue": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          }
+        }
+      },
+      "metaData": {
+        "content-type": "application/json"
+      }
+    },
+    {
+      "description": "create product event",
+      "providerStates": [
+
+      ],
+      "contents": {
         "Message": {
           "contents": "string",
           "json_class": "Pact::SomethingLike"
         },
         "MessageAttributes": {
-          "Country": {
+          "ID": {
             "DataType": {
-              "contents": "string",
+              "contents": "number",
               "json_class": "Pact::SomethingLike"
             },
             "StringValue": {
-              "contents": "sweden",
+              "contents": 1234,
               "json_class": "Pact::SomethingLike"
             }
           },
-          "Region": {
+          "Name": {
             "DataType": {
               "contents": "string",
               "json_class": "Pact::SomethingLike"
             },
             "StringValue": {
-              "contents": "europe",
+              "contents": "polestar 1",
               "json_class": "Pact::SomethingLike"
             }
           }
