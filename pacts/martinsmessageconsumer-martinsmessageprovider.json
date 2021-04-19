@@ -7,67 +7,6 @@
   },
   "messages": [
     {
-      "description": "create country event",
-      "providerStates": [
-
-      ],
-      "contents": {
-        "Message": "string",
-        "MessageAttributes": {
-          "Country": {
-            "DataType": "string",
-            "StringValue": "sweden"
-          },
-          "Region": {
-            "DataType": "string",
-            "StringValue": "europe"
-          }
-        }
-      },
-      "matchingRules": {
-        "body": {
-          "$.Message": {
-            "matchers": [
-              {
-                "match": "type"
-              }
-            ]
-          },
-          "$.MessageAttributes.Country.DataType": {
-            "matchers": [
-              {
-                "match": "type"
-              }
-            ]
-          },
-          "$.MessageAttributes.Country.StringValue": {
-            "matchers": [
-              {
-                "match": "type"
-              }
-            ]
-          },
-          "$.MessageAttributes.Region.DataType": {
-            "matchers": [
-              {
-                "match": "type"
-              }
-            ]
-          },
-          "$.MessageAttributes.Region.StringValue": {
-            "matchers": [
-              {
-                "match": "type"
-              }
-            ]
-          }
-        }
-      },
-      "metaData": {
-        "content-type": "application/json"
-      }
-    },
-    {
       "description": "create product event",
       "providerStates": [
 
