@@ -7,7 +7,7 @@
   },
   "messages": [
     {
-      "description": "create country event",
+      "description": "create product event",
       "providerStates": [
 
       ],
@@ -17,13 +17,23 @@
           "json_class": "Pact::SomethingLike"
         },
         "MessageAttributes": {
-          "Country": {
+          "ID": {
+            "DataType": {
+              "contents": "number",
+              "json_class": "Pact::SomethingLike"
+            },
+            "StringValue": {
+              "contents": 1234,
+              "json_class": "Pact::SomethingLike"
+            }
+          },
+          "Name": {
             "DataType": {
               "contents": "string",
               "json_class": "Pact::SomethingLike"
             },
             "StringValue": {
-              "contents": "sweden",
+              "contents": "polestar 1",
               "json_class": "Pact::SomethingLike"
             }
           }

@@ -16,17 +16,21 @@ describe("consumer of sqs queue", () => {
     provider: "MartinsMessageProvider",
   });
 
-  it("accepts a valid message", async () => {
+  it("accepts a valid create product message", async () => {
     await expect(
       // Consumer expectations
       messagePact
-        .expectsToReceive("create country event")
+        .expectsToReceive("create product event")
         .withContent({
           Message: like("string"),
           MessageAttributes: {
-            Country: {
+            ID: {
+              DataType: like("number"),
+              StringValue: like(1234),
+            },
+            Name: {
               DataType: like("string"),
-              StringValue: like("sweden"),
+              StringValue: like("polestar 1"),
             },
           },
         })
