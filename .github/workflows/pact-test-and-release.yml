@@ -33,17 +33,7 @@ jobs:
           --broker-base-url $PACT_BROKER_BASE_URL 
           --broker-token $PACT_BROKER_TOKEN 
           --consumer-app-version $PACTICIPANT_VERSION 
-          --tag ${{ github.ref }}
-      - name: Can i deploy?
-        run: >
-          yarn pact-broker can-i-deploy
-          --pacticipant $PACTICIPANT
-          --version $PACTICIPANT_VERSION
-          --to $DEPLOY_TARGET
-          --retry-while-unknown 3 
-          --retry-interval 30
-          --broker-base-url $PACT_BROKER_BASE_URL
-          --broker-token $PACT_BROKER_TOKEN        
+          --tag ${{ github.ref }}   
 
   can-i-deploy:
     if: ${{ github.ref != 'refs/heads/master' }}
