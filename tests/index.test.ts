@@ -26,7 +26,7 @@ describe("consumer of sqs queue", () => {
           MessageAttributes: {
             ID: {
               DataType: like("number"),
-              StringValue: like(1234),
+              StringValue: like("1234"),
             },
             Name: {
               DataType: like("string"),

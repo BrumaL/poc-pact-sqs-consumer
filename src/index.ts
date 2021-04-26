@@ -6,7 +6,10 @@ const credentials = new AWS.SharedIniFileCredentials({ profile: "default" });
 AWS.config.update({ credentials: credentials, region: "eu-north-1" });
 
 export const processMessage = async (message: AWS.SQS.Message) => {
-  if (!message.MessageAttributes["ID"] || !message.MessageAttributes["Name"]) {
+  if (
+    !message.MessageAttributes["ID"].StringValue ||
+    !message.MessageAttributes["Name"].StringValue
+  ) {
     throw new Error("Missing fields");
   }
 
