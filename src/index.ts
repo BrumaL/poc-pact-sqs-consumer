@@ -10,6 +10,9 @@ export const processMessage = async (message: AWS.SQS.Message) => {
     throw new Error("Missing fields");
   }
 
+  console.log(message.MessageAttributes["ID"]);
+  console.log(message.MessageAttributes["Name"]);
+
   return;
 };
 
