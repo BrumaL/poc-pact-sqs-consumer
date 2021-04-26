@@ -23,7 +23,7 @@
               "json_class": "Pact::SomethingLike"
             },
             "StringValue": {
-              "contents": 1234,
+              "contents": "1234",
               "json_class": "Pact::SomethingLike"
             }
           },
