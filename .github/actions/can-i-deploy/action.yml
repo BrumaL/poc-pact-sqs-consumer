@@ -1,0 +1,31 @@
+
+name: can-i-deploy
+description: Check if it is safe to deploy
+inputs:
+  stage:
+    description: Stage to release to
+    required: true
+    default: "dev"
+  version:
+    description: Commit hash for release
+    required: true
+  pacticipant:
+    description: Name of the contract to check
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo Can i deploy ${{ inputs.pacticipant }} to ${{ inputs.stage }}
+      shell: bash
+    - name: Can I deploy?
+      run: >
+        yarn pact-broker can-i-deploy 
+        -a ${{ inputs.pacticipant }}
+        -e ${{ inputs.version }} 
+        --to ${{ inputs.stage }} 
+        --retry-while-unknown 3 
+        --retry-interval 30
+        -b $PACT_BROKER_BASE_URL 
+        -k $PACT_BROKER_TOKEN
+      shell: bash
